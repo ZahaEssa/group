@@ -21,7 +21,7 @@ class Connect {
     }
 }
 
-// Usage:
+
 $servername = "localhost";
 $username = "root";
 $password = "786110Zahabiya";
