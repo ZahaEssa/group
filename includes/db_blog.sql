@@ -14,12 +14,10 @@ CREATE TABLE IF NOT EXISTS verify (
     email VARCHAR(255) NOT NULL UNIQUE,
     expiry_time DATETIME NOT NULL,
     authorusername VARCHAR(50),
-authorpassword VARCHAR(200),
-authorconfirmpassword VARCHAR(200)
+authorpassword VARCHAR(200)
 
 );
-ALTER TABLE verify
-ADD is_verified INT DEFAULT 0;
+
 
 drop table author;
 select*from verify;
