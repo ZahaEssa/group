@@ -64,7 +64,7 @@
             
             <h2>Email Verification</h2>
             <div class="card-body">
-                <form action="mail2.php" method="POST">
+                <form action="processes/mail2.php" method="POST">
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" class="form-control" id="name" name="name" required>
