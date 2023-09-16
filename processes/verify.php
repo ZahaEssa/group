@@ -1,5 +1,5 @@
  <?php
-require_once "includes/connect.php";
+require_once "../includes/connect.php";
 class Verify {
 private $con;
 public function __construct($con)
@@ -23,7 +23,7 @@ public function emailVerification($token)
     $updateStmt->bind_param("si",$newToken,$id);
     if($updateStmt->execute())
     {
-        header("Location: signup.php?email=".urlencode($email)."&id=".$id);
+        header("Location:signup.php?email=".urlencode($email)."&id=".$id);
     }
     else{
         echo "Update failed";
@@ -31,7 +31,7 @@ public function emailVerification($token)
    
   }
   else{
-    header("Location: test.php");
+    header("Location: ../test.php");
 }
 
 }
