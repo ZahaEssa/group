@@ -17,13 +17,18 @@ class UserUpdater {
         $stmt->bind_param("ssi", $username, $hashpass, $id);
 
         if ($stmt->execute()) {
-            return true; 
+            header("Location: ../blogsubmission.php");
         } else {
             return "Error updating user: " . $stmt->error;
         }
     }
     else{
-        echo "Passwords do not match";
+        echo "<div style='background-color: #4CAF50; color: white; padding: 10px; text-align: center;'>";
+        echo "Passwords do not match. ";
+        echo "You will be redirected to the sign up page once again <a href='../signup.php' style='color: white; text-decoration: none;'></a>. ";
+        echo "If not, <a href='../signup.php' style='color: white; text-decoration: none;'>click here</a>.<br><br>";
+        header("refresh:7;url=../signup.php?id=".$id);
+        echo "</div>";
     }
 }
 }
@@ -36,14 +41,8 @@ if (isset($_POST["registrationBtn"]) && isset($_GET["id"])) {
     $confirmPassword = $_POST["confirmpass"];
 
     $userUpdater = new UserUpdater($con);
-    $result = $userUpdater->updateUser($id, $username, $password, $confirmPassword);
+    $userUpdater->updateUser($id, $username, $password, $confirmPassword);
 
-    if ($result === true) {
-        header("Location: ../blogsubmission.php");
-        exit();
-    } else {
-        // Handle the error, e.g., display it to the user
-        echo $result;
-    }
+    
 }
 ?>
