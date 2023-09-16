@@ -1,38 +1,49 @@
 <?php
 require_once "../includes/connect.php";
-if(isset($_POST["registrationBtn"])){
-    $name=$_POST["authorname"];
-    $email=$_POST["emailaddress"];
-    $username=$_POST["username"];
-    $pass=$_POST["password"];
-    $confpass=$_POST["confirmpass"];
 
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-    {
-        echo "Email is invalid";
-        echo "<br>";
+class UserUpdater {
+    private $con;
+
+    public function __construct($con) {
+        $this->con = $con;
     }
-    if($pass!=$confpass)
-    {
-        echo "Passwords do not match";
+
+    public function updateUser($id, $username, $password, $confirmPassword) {
+        if ($password === $confirmPassword) 
+        {   
+        $hashpass = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt = $this->con->prepare("UPDATE verify SET authorusername=?, authorpassword=? WHERE id=?");
+        $stmt->bind_param("ssi", $username, $hashpass, $id);
+
+        if ($stmt->execute()) {
+            return true; 
+        } else {
+            return "Error updating user: " . $stmt->error;
+        }
     }
     else{
-        $hashpass=password_hash($pass, PASSWORD_DEFAULT);
-        $hashconfpass=password_hash($confpass, PASSWORD_DEFAULT);
+        echo "Passwords do not match";
     }
-
-$stmt=$con->prepare("INSERT INTO author(authorname,authoremail,authorusername,authorpassword,authorconfirmpassword) VALUES (?,?,?,?,?)");
-$stmt->bind_param("sssss",$name,$email,$username,$hashpass,$hashconfpass);
-if($stmt->execute())
-{
-    header("Location: ../signup.php");
 }
-
-else{
-    echo "Error: ".$stmt->error;
 }
 
 
-}
+if (isset($_POST["registrationBtn"]) && isset($_GET["id"])) {
+    $id = $_GET["id"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $confirmPassword = $_POST["confirmpass"];
 
+    $userUpdater = new UserUpdater($con);
+    $result = $userUpdater->updateUser($id, $username, $password, $confirmPassword);
+
+    if ($result === true) {
+        header("Location: ../blogsubmission.php");
+        exit();
+    } else {
+        // Handle the error, e.g., display it to the user
+        echo $result;
+    }
+}
 ?>
