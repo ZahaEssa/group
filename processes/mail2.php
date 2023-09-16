@@ -29,7 +29,7 @@ public function sendEmail($email,$name,$subject,$token)
     $this->mail->isHTML(true);
     $this->mail->Subject="Registration Verification";
     $link = "https://localhost/git/processes/verify.php?token=$token";
-    $this->mail->Body="Hello $name, You have signed up for the website. To complete signing up, click <a href='$link'>here</a>.<br><br> Kind regards"; 
+    $this->mail->Body="Hello $name, You have signed up for the Blogs website. To complete signing up, click <a href='$link'>here</a>.<br>  Please note that the link will expire within two hours and in the event you have not signed, you will be redirected to the Email verification page to enter your credentials once again<br><br>Kind regards<br>No Reply"; 
 
    if( $this->mail->send())
    {
