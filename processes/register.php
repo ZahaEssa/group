@@ -25,8 +25,8 @@ class UserUpdater {
     else{
         echo "<div style='background-color: #4CAF50; color: white; padding: 10px; text-align: center;'>";
         echo "Passwords do not match. ";
-        echo "You will be redirected to the sign up page once again <a href='../signup.php' style='color: white; text-decoration: none;'></a>. ";
-        echo "If not, <a href='../signup.php' style='color: white; text-decoration: none;'>click here</a>.<br><br>";
+        echo "You will be redirected to the sign up page once again. ";
+        echo "If not, <a href='../signup.php' style='color: white; text-decoration: underline;'>click here</a>.<br><br>";
         header("refresh:7;url=../signup.php?id=".$id);
         echo "</div>";
     }
