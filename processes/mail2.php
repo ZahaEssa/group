@@ -1,9 +1,9 @@
 <?php
-
+date_default_timezone_set('Africa/Nairobi');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require "PHPMailer/vendor/autoload.php";
-require_once "includes/connect.php";
+require "../PHPMailer/vendor/autoload.php";
+require_once "../includes/connect.php";
 
 class Mail{
 private $mail;
@@ -28,7 +28,7 @@ public function sendEmail($email,$name,$subject,$token)
 
     $this->mail->isHTML(true);
     $this->mail->Subject="Registration Verification";
-    $link = "https://localhost/group/verify.php?token=$token";
+    $link = "https://localhost/git/processes/verify.php?token=$token";
     $this->mail->Body="Hello $name, You have signed up for the website. To complete signing up, click <a href='$link'>here</a>.<br><br> Kind regards"; 
 
    if( $this->mail->send())
@@ -60,7 +60,7 @@ if (isset($_POST["send"])) {
     $email = $_POST["email"];
     $name = $_POST["name"];
     $token = bin2hex(random_bytes(32));
-    $expire = date("Y-m-d H:i:s", strtotime("+2 minutes"));
+    $expire = date("Y-m-d H:i:s", strtotime("+2 hours"));
 
    
     $sql = "INSERT INTO verify (name, token, email, expiry_time) VALUES (?, ?, ?, ?)
