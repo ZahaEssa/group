@@ -23,7 +23,7 @@ public function emailVerification($token)
     $updateStmt->bind_param("si",$newToken,$id);
     if($updateStmt->execute())
     {
-        header("Location:signup.php?email=".urlencode($email)."&id=".$id);
+        header("Location:../signup.php?email=".urlencode($email)."&id=".$id);
     }
     else{
         echo "Update failed";
