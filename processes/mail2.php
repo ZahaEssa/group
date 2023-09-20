@@ -28,7 +28,7 @@ class Mail {
 
             $this->mail->isHTML(true);
             $this->mail->Subject = $subject;
-            $link = "https://localhost/git/processes/verify.php?token=$token";
+            $link = "https://localhost/group/processes/verify.php?token=$token";
             $this->mail->Body = "Hello $name, You have signed up for the Blogs website. To complete signing up, click <a href='$link'>here</a>.<br>  Please note that the link will expire within two hours and in the event you have not completed the registration process, you will be redirected to the Email verification page to enter your credentials once again<br><br>Kind regards,<br>Blogs Website Admin.";
 
             if ($this->mail->send()) {

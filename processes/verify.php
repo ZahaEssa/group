@@ -23,7 +23,7 @@ public function emailVerification($token)
     $updateStmt->bind_param("si",$newToken,$id);
     if($updateStmt->execute())
     {
-        header("Location:../signup.php?email=".urlencode($email)."&id=".$id);
+        header("Location: ../signup.php?email=".urlencode($email)."&id=".$id);
     }
     else{
         echo "Update failed";
@@ -36,8 +36,6 @@ public function emailVerification($token)
 
 }
 
-
-
 }
 if(isset($_GET["token"]))
 {
@@ -49,9 +47,5 @@ if(isset($_GET["token"]))
 else{
     echo "No token provided";
 }
-
-
-
-
 
 ?>

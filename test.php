@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMAIL VERIFICATION</title>
-    <!-- Add Bootstrap CSS -->
+   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Custom CSS for the form */
+        
         body {
             background: linear-gradient(135deg, #c3e0dc, #a8d8e6); /* Background gradient */
         }

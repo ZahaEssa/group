@@ -8,12 +8,12 @@ require_once "includes/connect.php";
 <head>
     <meta charset="UTF-8">
     <title>Signup Form</title>
-    <!-- Add Bootstrap CSS -->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Custom CSS for fancier styling */
+        
         body {
-            background: linear-gradient(135deg, #c3e0dc, #a8d8e6); /* Background gradient */
+            background: linear-gradient(135deg, #c3e0dc, #a8d8e6); 
         }
 
         .container {
@@ -27,7 +27,7 @@ require_once "includes/connect.php";
         }
 
         .card-header {
-            background-color: #007bff; /* Header background color */
+            background-color: #007bff; 
             color: white;
             text-align: center;
             border-radius: 15px 15px 0 0;
@@ -75,9 +75,9 @@ require_once "includes/connect.php";
             text-decoration: none;
             border-radius: 10px;
             font-weight: bold;
-            font-size: 18px; /* Increase font size */
-            padding: 10px; /* Add padding for better hover effect */
-            transition: background-color 0.3s; /* Smooth hover effect */
+            font-size: 18px; 
+            padding: 10px;
+            transition: background-color 0.3s; 
         }
 
         .nav-section a:last-child {
@@ -85,7 +85,7 @@ require_once "includes/connect.php";
         }
 
         .nav-section a:hover {
-            background-color: #007BFF; /* Hover background color */
+            background-color: #007BFF; 
             text-decoration: none;
             color:white;
         }
@@ -93,16 +93,7 @@ require_once "includes/connect.php";
 </head>
 
 <body>
-<div class="nav-section">
-        <div class="float-left">
-            <a href="blogsubmission.php">Blog Submission</a>
-            <a href="viewBlogs.php">View Blogs</a>
-        </div>
-        <div class="float-right">
-            <a class="btn btn-link" href="processes/signOut.php">Sign Out</a>
-        </div>
-        <div class="clearfix"></div>
-    </div>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -113,27 +104,30 @@ require_once "includes/connect.php";
                     <div class="card-body">
                         <h4 class="text-center">It's free and only takes a minute</h4>
                         <?php
-    $id=$_GET["id"];
-    $action="processes/register.php?id=".$id;
-    ?>
-                        <form action="<?php echo $action; ?>" method="POST" autocomplete="off">
-                          
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" placeholder="Please enter your username" name="username" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="pass">Password</label>
-                                <input type="password" class="form-control" id="pass" placeholder="Please enter your password" name="password" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="confirmedpassword">Password Confirmation</label>
-                                <input type="password" class="form-control" id="confirmedpassword" placeholder="Please enter your password again" name="confirmpass" required>
-                            </div>
-                            <div class="form-group text-center">
-                                <button type="submit" name="registrationBtn" class="btn btn-primary btn-block">Sign Up</button>
-                            </div>
-                        </form>
+                        $id = isset($_GET["id"]) ? $_GET["id"] : null; // Check if 'id' is set in $_GET
+                        $action = "processes/register.php?id=" . $id;
+                        ?>
+                       <form action="<?php echo $action; ?>" method="POST" autocomplete="off">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Please enter your username" name="username" required>
+    </div>
+    <div class="form-group">
+        
+    </div>
+    <div class="form-group">
+        <label for="pass">Password</label>
+        <input type="password" class="form-control" id="pass" placeholder="Please enter your password" name="password" required>
+    </div>
+    <div class="form-group">
+        <label for="confirmedpassword">Password Confirmation</label>
+        <input type="password" class="form-control" id="confirmedpassword" placeholder="Please enter your password again" name="confirmpass" required>
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" name="registrationBtn" class="btn btn-primary btn-block">Sign Up</button>
+    </div>
+</form>
+
                         <p class="text-center">
                             By clicking on the Sign Up button, you agree to our<br />
                             <a href="#">Terms and Conditions</a> and <a href="#">Policy And Privacy</a>
@@ -143,13 +137,6 @@ require_once "includes/connect.php";
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Navigation links -->
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
     </div>
 
     <!-- Bootstrap JS (Popper.js and jQuery are not needed for this example) -->

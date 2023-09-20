@@ -1,14 +1,14 @@
 <?php
 require_once "../includes/connect.php";
 
-if (isset($_GET['articletitle'])) {
-    $articletitle = $_GET["articletitle"];
-    $sql = "DELETE FROM blog_writing WHERE articletitle = '$articletitle'"; 
+if (isset($_GET['article_id'])) {
+    $articleId = $_GET["article_id"];
+    $sql = "DELETE FROM blog_writing WHERE article_id = '$articleId'"; 
     $result = $con->query($sql);
 
     if ($result) {
         // Deletion successful
-        header("Location: viewBlogs.php");
+        header("Location: ../viewBlogs.php");
         exit();
     } else {
         echo "Error deleting entry: " . $con->error; 

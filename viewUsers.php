@@ -1,9 +1,8 @@
 <?php
-// Include your database connection file here
+
 require_once "includes/connect.php";
 
-// Retrieve user data from the database
-$sql = "SELECT * FROM author";
+$sql = "SELECT * FROM verify ORDER BY id ASC";
 $result = $con->query($sql);
 
 ?>
@@ -18,7 +17,7 @@ $result = $con->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Your CSS styles for the page */
+       
         body {
             margin: 20px;
             padding: 50px;
@@ -50,23 +49,38 @@ $result = $con->query($sql);
             color: #333;
         }
 
-        /* Other CSS styles for your user list */
     </style>
+    
 </head>
 <body>
+
+<div class="nav-section">
+        <div class="float-left">
+            <a href="blogsubmission.php">Blog Submission</a>
+            <a href="viewBlogs.php">View Blogs</a>
+        </div>
+        <div class="float-right">
+            <a class="btn btn-link" href="processes/signOut.php">Sign Out</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
     <h1>View Users</h1>
-   
+
     <div class="container">
         <?php
         if ($result && $result->num_rows > 0) {
-            // Output data of each user
+
+            echo '<ol>';
             while ($row = $result->fetch_assoc()) {
+                echo '<li>';
                 echo "<h2>User ID: " . $row["id"] . "</h2>";
                 echo "<p>Username: " . $row["authorusername"] . "</p>";
-                echo "<p>Email: " . $row["authoremail"] . "</p>";
+                echo "<p>Email: " . $row["email"] . "</p>";
                 echo "<p>Registration Date: " . $row["registration_date"] . "</p>";
-                // You can add more user information fields here
-                echo "<hr>"; // Add a horizontal line to separate user entries
+                echo "</li>";
+                echo "<hr>"; // a horizontal line to separate user entries
+                echo "</li>";
             }
         } else {
             echo "No users found.";
@@ -74,12 +88,12 @@ $result = $con->query($sql);
         ?>
     </div>
 
-    <!-- Add Bootstrap JS (Popper.js and jQuery are not needed for this example) -->
+ 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
 
 <?php
-// Close the database connection
+
 $con->close();
 ?>
