@@ -1,5 +1,5 @@
 <?php
-require_once "../includes/connect.php";
+require_once "includes/connect.php";
 if(isset($_POST["blogBtn"])){
 $name=$_POST["authorname"];
 $title=$_POST["articletitle"];
@@ -16,7 +16,7 @@ $stmt=$con->prepare("INSERT INTO blog_writing(authorname,articletitle,articletex
 $stmt->bind_param("sss",$name,$title,$blogarea);
 if($stmt->execute())
 {
-    header("Location: ../viewBlogs.php");
+    header("Location: processes/viewBlogs.php");
         exit();
 }
 else{

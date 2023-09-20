@@ -130,7 +130,7 @@ if(isset($_SESSION["data"])){
             <!-- Updated title style -->
             <h1 class="card-title">Blog Submission</h1>
             <div class="card-body">
-                <form action="processes/blogentry.php" method="POST" autocomplete="off" id="blogForm">
+                <form action="blogentry.php" method="POST" autocomplete="off" id="blogForm">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Please enter your full name" name="authorname" required>

@@ -1,5 +1,5 @@
 <?php
-require_once "includes/connect.php";
+require_once "../includes/connect.php";
 
 if (isset($_GET['articletitle'])) {
    $articletitle = $_GET["articletitle"];
@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
     $update = "UPDATE blog_writing SET authorname = '$authorname', articletext = '$articletext' WHERE articletitle = '$articletitle'";
 
     if ($con->query($update) === TRUE) {
-        header("Location: viewBlogs.php");
+        header("Location: ../viewBlogs.php");
         exit();
     } else {
         echo "Error updating blog entry: " . $con->error;
@@ -38,7 +38,7 @@ if (isset($_POST["submit"])) {
 
 ?>
     <h1>Edit Blog Entry</h1>
-    <form action="" method="POST">
+    <form action="update.processes.php" method="POST">
         <input type="hidden" name="articletitle" value="<?php echo $row['articletitle']; ?>">
 
         <label for="authorname">Author Name:</label>
@@ -47,7 +47,7 @@ if (isset($_POST["submit"])) {
         <label for="articletext">Article Text:</label>
         <textarea name="articletext" id="articletext" rows="10" required><?php echo $row['articletext']; ?></textarea> <br><br>
 
-        <input type="submit" name="submit" value="Update">
+        <input type="submit" name="update" value="Update">
     </form>
 
 </html>

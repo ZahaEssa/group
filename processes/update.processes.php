@@ -1,5 +1,5 @@
 <?php
-require_once "includes/connect.php";
+require_once "../includes/connect.php";
 
 if (isset($_POST["update"])) {
     $articletitle = $_POST["articletitle"];

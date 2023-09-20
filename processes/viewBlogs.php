@@ -1,5 +1,5 @@
 <?php
-require_once "includes/connect.php";
+require_once "../includes/connect.php";
 
 // Retrieve blog entries from the database
 $sql = "SELECT * FROM blog_writing ORDER BY publicationdate DESC LIMIT 4";

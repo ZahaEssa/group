@@ -1,5 +1,5 @@
 <?php
-require_once "includes/connect.php";
+require_once "../includes/connect.php";
 
 if (isset($_GET['articletitle'])) {
     $articletitle = $_GET["articletitle"];
