@@ -52,7 +52,7 @@ if (isset($_POST["submit"])) {
             margin: 20px;
             padding: 50px;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background: linear-gradient(135deg, #c3e0dc, #a8d8e6); 
         }
 
         h1 {
@@ -107,10 +107,42 @@ if (isset($_POST["submit"])) {
             background-color: #0056b3;
             text-decoration: none;
         }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <h1>Edit Blog Entry</h1>
+<div class="container">
+        <div class="card">
+            
+            <h1 class="card-title">Edit Blog</h1>
+            <div class="card-body">
     <form action="update.processes.php" method="POST">
         <input type="hidden" name="article_id" value="<?php echo $row['article_id']; ?>">
 
@@ -125,5 +157,8 @@ if (isset($_POST["submit"])) {
 
         <input type="submit" name="update" value="Update">
     </form>
+    </div>
+    </div>
+    </div>
 </body>
 </html>
