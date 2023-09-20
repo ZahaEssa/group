@@ -7,12 +7,12 @@ require_once "includes/connect.php";
 <head>
     <meta charset="UTF-8">
     <title>Blog Submission Form</title>
-    <!-- Add Bootstrap CSS -->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Custom CSS for the form */
+        
         body {
-            background: linear-gradient(135deg, #c3e0dc, #a8d8e6); /* Background gradient */
+            background: linear-gradient(135deg, #c3e0dc, #a8d8e6); 
         }
 
         .container {
@@ -116,8 +116,9 @@ if(isset($_SESSION["data"])){
     <div class="nav-section">
         <div class="float-left">
             <a href="blogsubmission.php">Blog Submission</a>
-            <a href="viewBlogs.php">View Blogs</a>
             <a href="viewUsers.php">View Users</a>
+            <a href="viewBlogs.php">View Blogs</a>
+            
             
         </div>
         <div class="float-right">
@@ -128,7 +129,7 @@ if(isset($_SESSION["data"])){
 
     <div class="container">
         <div class="card">
-            <!-- Updated title style -->
+            
             <h1 class="card-title">Blog Submission</h1>
             <div class="card-body">
                 <form action="processes/blogentry.php" method="POST" autocomplete="off" id="blogForm">
