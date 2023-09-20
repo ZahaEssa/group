@@ -19,10 +19,38 @@ $result = $con->query($sql);
     <style>
        
         body {
-            margin: 20px;
-            padding: 50px;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background: linear-gradient(135deg, #c3e0dc, #a8d8e6); 
+        }
+
+        .nav-section {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .nav-section a {
+            display: inline-block;
+            margin-right: 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-section a:last-child {
+            margin-right: 0;
+        }
+
+        .nav-section a:hover {
+            background-color: #007BFF;
+            text-decoration: none;
+            color: white;
         }
 
         .container {
@@ -48,6 +76,24 @@ $result = $con->query($sql);
             margin-top: 20px;
             color: #333;
         }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 0;
+            padding: 20px;
+        }
 
     </style>
     
@@ -57,7 +103,9 @@ $result = $con->query($sql);
 <div class="nav-section">
         <div class="float-left">
             <a href="blogsubmission.php">Blog Submission</a>
+            <a href="viewUsers.php">View Users</a>
             <a href="viewBlogs.php">View Blogs</a>
+            
         </div>
         <div class="float-right">
             <a class="btn btn-link" href="processes/signOut.php">Sign Out</a>
@@ -65,9 +113,11 @@ $result = $con->query($sql);
         <div class="clearfix"></div>
     </div>
 
-    <h1>View Users</h1>
-
     <div class="container">
+        <div class="card">
+            
+            <h1 class="card-title">View Users</h1>
+            <div class="card-body">
         <?php
         if ($result && $result->num_rows > 0) {
 
@@ -87,7 +137,8 @@ $result = $con->query($sql);
         }
         ?>
     </div>
-
+    </div>
+    </div>
  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
