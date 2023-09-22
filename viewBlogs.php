@@ -164,17 +164,17 @@ $result = $con->query($sql);
 </head>
 <body>
 <div class="nav-section">
-    <div class="float-left">
-        <a href="blogsubmission.php">Blog Submission</a>
-        <a href="viewUsers.php">View Users</a>
-        <a href="viewBlogs.php">View Blogs</a>
+        <div class="float-left">
+            <a href="homepage.php">Home page</a>
+            <a href="blogsubmission.php">Blog Submission</a>
+            <a href="viewBlogs.php">View Blogs</a>
+            <a href="viewUsers.php">View Users</a>
+        </div>
+        <div class="float-right">
+            <a class="btn btn-link" href="processes/signOut.php">Sign Out</a>
+        </div>
+        <div class="clearfix"></div>
     </div>
-    <div class="float-right">
-        <a class="btn btn-link" href="processes/signOut.php">Sign Out</a>
-    </div>
-    <div class="clearfix"></div>
-</div>
-<div class="container">
         <div class="card">
             
             <h1 class="card-title">View Blogs</h1>
