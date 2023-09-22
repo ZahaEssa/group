@@ -110,10 +110,11 @@ require_once "includes/connect.php";
                     </div>
                     <div class="card-body">
                         <p class="text-center">
-                            Verify your <a href="test.php">email here</a><br /><br />
-                            <a href="#">Terms and Conditions</a> and <a href="#">Policy And Privacy</a>
+                            Verify your <a href="test.php">Email here</a><br />
+                            <p class="text-center">Already have an account? <a href="signin.php">Login here</a></p>
+                            <p class="text-center"> <a href="#">Terms and Conditions</a> and <a href="#">Policy And Privacy</a></p>
                         </p>
-                        <p class="text-center">Already have an account? <a href="signin.php">Login here</a></p>
+                        
                         
                     </div>
                 </div>
