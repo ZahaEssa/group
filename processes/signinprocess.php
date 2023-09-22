@@ -27,8 +27,7 @@ class SignInManager
                 header("Location: ../homepage.php");
                 exit();
             } else {
-
-               $error_message = "Incorrect password";
+                $error_message = "Incorrect password";
                 header("Location: ../signin.php?error=" . urlencode($error_message));
                 exit();
             }
