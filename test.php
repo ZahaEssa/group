@@ -77,6 +77,7 @@
                         <input type="submit" value="Send" name="send" class="btn btn-primary">
                     </div>
                 </form>
+                <p class="text-center">Already have an account? <a href="signin.php">Sign In Here</a></p>
             </div>
         </div>
     </div>

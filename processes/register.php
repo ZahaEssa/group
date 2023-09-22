@@ -17,7 +17,7 @@ class UserUpdater {
         $stmt->bind_param("ssi", $username, $hashpass, $id);
 
         if ($stmt->execute()) {
-            header("Location: ../blogsubmission.php");
+            header("Location: ../signin.php");
         } else {
             return "Error updating user: " . $stmt->error;
         }

@@ -101,15 +101,6 @@ require_once "includes/connect.php";
     </style>
 </head>
 
-<?php
-session_start();
-if(isset($_SESSION["data"])){
-?>
-    <?php print "Welcome " . $_SESSION["data"]["authorname"]; ?>
-    <a class="btn btn-link" href="processes/signOut.php">Sign Out</a>
-    <?php
-}
-?>
 
 <body>
     <!-- Navigation section with links -->

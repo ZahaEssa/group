@@ -35,10 +35,10 @@ class Mail {
                 echo "<div style='background-color: #4CAF50; color: white; padding: 10px; text-align: center;'>";
                 echo "Email sent successfully. ";
               
-                echo "If not, <a href='../test.php' style='color: white; text-decoration: underline;'>click here</a>.<br><br>";
+                echo "You will be redirected back to the dashboard. If you were not redirected back to the dashboard, <a href='../test.php' style='color: white; text-decoration: underline;'>click here</a>.<br><br>";
                 echo "If you did not receive the verification email click <a href='../test.php' style='color: white; text-decoration: underline;'>here</a>.";
                 echo "</div>";
-                header("refresh:7;url=../test.php");
+                header("refresh:7;url=../index.php");
             } else {
                 echo "<div style='background-color: #FF5733; color: white; text-align: center; padding: 10px;'>";
                 echo "Email could not be sent. Try again later";
