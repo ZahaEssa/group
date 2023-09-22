@@ -24,11 +24,5 @@ CREATE TABLE `blog_writing` (
 
 
 
-drop table author;
-select*from verify;
-select*from author;
-drop table verify;
-drop table blog_writing;
-
 
 
