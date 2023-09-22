@@ -13,7 +13,7 @@ registration_date datetime DEFAULT current_timestamp()
 
 );
 
-);
+
 CREATE TABLE `blog_writing` (
   `authorname` varchar(80) NOT NULL,
   `articletitle` varchar(150) NOT NULL,
