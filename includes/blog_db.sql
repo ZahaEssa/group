@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2023 at 01:19 PM
+-- Generation Time: Sep 22, 2023 at 08:23 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,32 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `blog_db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `author`
---
-
-CREATE TABLE `author` (
-  `authorname` varchar(80) NOT NULL,
-  `authoremail` varchar(200) NOT NULL,
-  `authorpassword` varchar(60) NOT NULL,
-  `authorconfirmpassword` varchar(60) NOT NULL,
-  `id` int(11) NOT NULL,
-  `authorusername` int(80) NOT NULL,
-  `expiry_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `token` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `author`
---
-
-INSERT INTO `author` (`authorname`, `authoremail`, `authorpassword`, `authorconfirmpassword`, `id`, `authorusername`, `expiry_time`, `token`) VALUES
-('Netiah Hafsah', 'h@gmail.com', '$2y$10$seNlGREY1jEDNByW0zKisuhu6uwj26wFQX636nkxoBV2MlehucGja', '$2y$10$HehELG/gO7STeeF7NKitf.ILaRywlFRxfwRpFplOtZLWKfEpZaeLC', 1, 0, '2023-09-17 11:13:27', ''),
-('hetul', 'hetulntank01@gmail.com', '$2y$10$WhXsPejp.DPaIuWPh1PsiOzN7JFazylUNwuWahOoXFf/0DgIWUALe', '$2y$10$mygKky8p0.A.lIZuvr0siecmPBcWzKJefdw2aBnxHUWxfgnQ1UYlC', 2, 0, '2023-09-17 11:13:27', ''),
-('Niisha Mbaruku', 'niisha@gmail.com', '$2y$10$qDhDPrn0RRVqTQJ8eZmPvOrx2RWJvhnWNc.wR/wMlsCGkDFgmF70e', '$2y$10$kMzMnFto4ryQpzlIW1rhseKNFHHlnbzH.BqtZEGE7SlXFxmi6nrvK', 3, 0, '2023-09-17 11:13:27', '');
+create database `blog_db`;
 
 -- --------------------------------------------------------
 
@@ -57,7 +32,7 @@ CREATE TABLE `blog_writing` (
   `authorname` varchar(80) NOT NULL,
   `articletitle` varchar(150) NOT NULL,
   `articletext` longtext NOT NULL,
-  `publicationdate` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `publicationdate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `article_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -66,19 +41,37 @@ CREATE TABLE `blog_writing` (
 --
 
 INSERT INTO `blog_writing` (`authorname`, `articletitle`, `articletext`, `publicationdate`, `article_id`) VALUES
-('Hafsah Siti', 'Hello', 'writing area', '2023-09-17 12:23:37', 5),
-('Ted M', 'HIMYMMMMMM', 'funny showwwwwww', '2023-09-17 13:37:33', 6);
+('SHAMOONNN', 'BLAH BLAH BLAH', 'Donuts and Milkshake and Hafsah', '2023-09-20 13:37:34', 10),
+('qwertyu', 'qwertyu', 'wertyuikjhgfdcxcvbn', '2023-09-20 17:15:06', 14);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `verify`
+--
+
+CREATE TABLE `verify` (
+  `name` varchar(80) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `authorpassword` varchar(60) NOT NULL,
+  `id` int(11) NOT NULL,
+  `authorusername` varchar(80) NOT NULL,
+  `expiry_time` datetime NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `registration_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `verify`
+--
+
+INSERT INTO `verify` (`name`, `email`, `authorpassword`, `id`, `authorusername`, `expiry_time`, `token`, `registration_date`) VALUES
+('Hafsah', 'hafsah.netiah@strathmore.edu', '$2y$10$hxdT1Ok7siZVNtCCmy/1YOWXicIV.d6/uNOUzUoTzqFvOG/ZRVDfi', 26, 'PD2', '2023-09-20 20:44:37', '3614449e86feff6c8eef1166531aa698', '2023-09-20 18:44:37'),
+('Charles Maina', 'hsnhafsah@gmail.com', '$2y$10$VOodM/OICGuk23Ci8Hz2c.OGBOyJolA2kkgzsN8p2YQTGYhwdIf5K', 27, 'Charlie', '2023-09-20 20:45:41', '57b66dee9ee774c01eda2131a55553ee', '2023-09-20 18:45:41');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `author`
---
-ALTER TABLE `author`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`authoremail`);
 
 --
 -- Indexes for table `blog_writing`
@@ -87,20 +80,27 @@ ALTER TABLE `blog_writing`
   ADD PRIMARY KEY (`article_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `verify`
 --
+ALTER TABLE `verify`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for table `author`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `author`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `blog_writing`
 --
 ALTER TABLE `blog_writing`
-  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `verify`
+--
+ALTER TABLE `verify`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
