@@ -175,6 +175,7 @@ $result = $con->query($sql);
         </div>
         <div class="clearfix"></div>
     </div>
+    <div class="container">
         <div class="card">
             
             <h1 class="card-title">View Blogs</h1>
