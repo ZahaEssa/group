@@ -134,7 +134,7 @@
                         <input type="submit" name="Signin" value="Sign In" class="btn btn-primary btn-block">
                     </div>
                 </form>
-                <p class="text-center">Don't have an account? <a href="SignUp.php">Sign Up Here</a></p>
+                <p class="text-center">Don't have an account? <a href="test.php">Sign Up Here</a></p>
             </div>
         </div>
     </div>
