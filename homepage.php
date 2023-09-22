@@ -100,8 +100,8 @@ require_once "includes/connect.php";
     <div class="nav-section">
         <div class="float-left">
             <a href="homepage.php">Home page</a>
-            
             <a href="blogsubmission.php">Blog Submission</a>
+            <a href="viewBlogs.php">View Blogs</a>
             <a href="viewUsers.php">View Users</a>
         </div>
         <div class="float-right">
@@ -119,10 +119,9 @@ require_once "includes/connect.php";
                     <div class="card-body">
                         <h4 class="text-center"></h4>
                         <p class="text-center">
-                            By clicking on the Sign Up button, you agree to our<br />
-                            <a href="#">Terms and Conditions</a> and <a href="#">Policy And Privacy</a>
-                        </p>
-                        <p class="text-center">Already have an account? <a href="signin.php">Login here</a></p>
+                        We're delighted to have you here, where knowledge meets inspiration.
+                        Explore a world of thought-provoking articles from information, entertainment, or simply a good read,<br /> you'll find it all here.<br />
+                            
                     </div>
                 </div>
             </div>
