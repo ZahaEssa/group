@@ -24,7 +24,7 @@ class Connect {
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "MainaWanjiru1980?";
 $db = "blog_db";
 
 $dbConnection = new Connect($servername, $username, $password, $db);
