@@ -1,5 +1,6 @@
 <?php
 require_once "includes/connect.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +8,7 @@ require_once "includes/connect.php";
 
 <head>
     <meta charset="UTF-8">
-    <title>Signup Form</title>
+    <title>Homepage</title>
     <!-- Add Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
