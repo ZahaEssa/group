@@ -113,10 +113,11 @@ if(isset($_SESSION["data"])){
 
 <body>
     <!-- Navigation section with links -->
-    <div class="nav-section">
+   <div class="nav-section">
         <div class="float-left">
             <a href="homepage.php">Home page</a>
             <a href="blogsubmission.php">Blog Submission</a>
+            <a href="viewBlogs.php">View Blogs</a>
             <a href="viewUsers.php">View Users</a>
         </div>
         <div class="float-right">
