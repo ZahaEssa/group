@@ -1,7 +1,11 @@
 <?php
 
 require_once "includes/connect.php";
-
+session_start();
+if (!isset($_SESSION['data'])) {
+    header('Location: signin.php');
+    exit();
+}
 $sql = "SELECT * FROM verify ORDER BY id ASC";
 $result = $con->query($sql);
 

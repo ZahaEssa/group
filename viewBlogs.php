@@ -1,6 +1,10 @@
 <?php
 require_once "includes/connect.php";
-
+session_start();
+if (!isset($_SESSION['data'])) {
+    header('Location: signin.php');
+    exit();
+}
 // Retrieve blog entries from the database
 $sql = "SELECT * FROM blog_writing ORDER BY publicationdate DESC LIMIT 4";
 $result = $con->query($sql);
