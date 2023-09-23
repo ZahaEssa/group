@@ -15,12 +15,12 @@ registration_date datetime DEFAULT current_timestamp()
 );
 
 
-CREATE TABLE IF NOT EXISTS`blog_writing` (
+CREATE TABLE IF NOT EXISTS `blog_writing` (
   `authorname` varchar(80) NOT NULL,
   `articletitle` varchar(150) NOT NULL,
   `articletext` longtext NOT NULL,
   `publicationdate` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `article_id` int(11) NOT NULL auto_increment
+  `article_id` int(11) NOT NULL auto_increment PRIMARY KEY
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 

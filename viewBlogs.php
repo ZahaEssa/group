@@ -193,8 +193,8 @@ $result = $con->query($sql);
             echo "<h3>" . "By " . $row["authorname"] . " on " . $row["publicationdate"] . "</h3>";
             echo "<p>" . $row["articletext"] . "</p>";
             echo '<button class="edit-button" onclick="location.href=\'processes/edit.php?article_id=' . $row["article_id"] . '\'">Edit</button>';
-            echo '<button class="delete-button" onclick="location.href=\'processes/delete.php?article_id=' . $row["article_id"] . '\'">Delete</button>';
-            echo "</div>";
+            ?><a class="delete-button" href="processes/delete.php?article_id=<?php echo $row['article_id']; ?>" onclick="return confirm('Are you sure you want to delete this article?')">Delete</a>
+       <?php echo "</div>";
         }
     }
     ?>
