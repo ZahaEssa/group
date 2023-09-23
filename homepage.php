@@ -120,7 +120,7 @@ if (!isset($_SESSION['data'])) {
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h1 class="card-title"><?php print "Welcome " . $_SESSION["data"]["authorusername"];?></h1>
+                        <h1 class="card-title"><?php print "Welcome " . $_SESSION["data"]["name"];?></h1>
                     </div>
                     <div class="card-body">
                         <h4 class="text-center"></h4>
