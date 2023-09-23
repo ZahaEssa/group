@@ -106,21 +106,28 @@
             border-radius: 8px;
             margin-bottom: 15px;
         }
+
+        .error-message {
+            text-align: center;
+            margin-top: 10px; /* Adjust this margin to your preference */
+            font-size: 18px; /* Increase font size */
+            color: red; /* Change font color */
+        }
     </style>
 </head>
 <body>
-    <?php
-    if (isset($_GET['error'])) {
-        $error_message = $_GET['error'];
-        echo "<p style='color: red;'>$error_message</p>";
-    }
-    ?>
     <div class="container">
         <div class="card login-form">
             <div class="card-header">
                 <h2 class="card-title">Login Form</h2>
             </div>
             <div class="card-body">
+                <?php
+                if (isset($_GET['error'])) {
+                    $error_message = $_GET['error'];
+                    echo "<div class='error-message'>$error_message</div>";
+                }
+                ?>
                 <form action="processes/signinprocess.php" method="POST" autocomplete="off">
                     <div class="form-group">
                         <label for="username">Author Username</label>
